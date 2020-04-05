@@ -1,4 +1,8 @@
-FROM debian:buster
+# Use a Debian Image
+FROM arm32v7/debian:stretch-slim
+
+#ARM Support
+COPY qemu-arm-static /usr/bin
 
 # Add debian unstable repo for wireguard packages
 RUN echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list && \
